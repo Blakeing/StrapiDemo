@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_restaurant_food_items",
+  "info": {
+    "name": "FoodItem",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal"
+    }
+  }
+}
