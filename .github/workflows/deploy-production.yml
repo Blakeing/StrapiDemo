@@ -1,0 +1,24 @@
+name: Deployment Cloud Run Production
+
+on:
+  push:
+    branches: -master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Build docker image
+        run: docker build -t gcr.io/strapidemo-288715/strapidemo-production
+
+      - name: Cloud Run
+        uses: gcr.io/strapidemo-288715/strapidemo-production
+        with:
+          image: strapidemo-288715/strapidemo-production
+          service: strapidemo-production
+          project: strapidemo-288715
+          region: us-central1
+          service key: ${{ secrets.GCLOUD_AUTH }}
