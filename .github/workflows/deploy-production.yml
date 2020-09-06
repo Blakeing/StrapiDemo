@@ -15,7 +15,7 @@ jobs:
         run: docker build -t gcr.io/strapidemo-288715/strapidemo-production
 
       - name: Cloud Run
-        uses: gcr.io/strapidemo-288715/strapidemo-production
+        uses: alfredosalzillo/action-cloud-run@v1.0
         with:
           image: strapidemo-288715/strapidemo-production
           service: strapidemo-production
