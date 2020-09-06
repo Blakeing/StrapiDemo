@@ -18,7 +18,7 @@ jobs:
       - name: Cloud Run
         uses: alfredosalzillo/action-cloud-run@v1.0
         with:
-          image: strapidemo-288715/strapidemo-production
+          image: gcr.io/strapidemo-288715/strapidemo-production
           service: strapidemo-production
           project: strapidemo-288715
           region: us-central1
