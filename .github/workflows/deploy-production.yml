@@ -2,7 +2,8 @@ name: Deployment Cloud Run Production
 
 on:
   push:
-    branches: -master
+    branches:
+      - master
 
 jobs:
   build:
@@ -12,12 +13,12 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Build docker image
-        run: docker build -t gcr.io/strapidemo-288715/strapidemo-production
+        run: docker build -t gcr.io/strapidemo-288715/strapidemo-production .
 
       - name: Cloud Run
         uses: alfredosalzillo/action-cloud-run@v1.0
         with:
-          image: strapidemo-288715/strapidemo-production
+          image: gcr.io/strapidemo-288715/strapidemo-production
           service: strapidemo-production
           project: strapidemo-288715
           region: us-central1
