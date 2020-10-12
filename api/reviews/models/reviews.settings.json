@@ -1,21 +1,21 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "Reviews",
   "info": {
-    "name": "category"
+    "name": "Review"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "restaurants": {
-      "collection": "restaurant",
-      "via": "categories",
-      "dominant": true
-    },
     "comment": {
       "type": "text"
+    },
+    "restaurants": {
+      "collection": "restaurant",
+      "via": "reviews",
+      "dominant": true
     }
   }
 }

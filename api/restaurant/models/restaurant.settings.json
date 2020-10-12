@@ -29,14 +29,18 @@
       "required": true
     },
     "categories": {
-      "collection": "category",
-      "via": "restaurants"
+      "via": "restaurants",
+      "collection": "category"
     },
     "restaurant_hours": {
       "type": "component",
       "repeatable": true,
       "component": "hours.hours-of-operation",
       "required": true
+    },
+    "reviews": {
+      "via": "restaurants",
+      "collection": "reviews"
     }
   }
 }
